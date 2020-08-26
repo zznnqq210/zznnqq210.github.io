@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"www.fun-sunday.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Java函数式编程利器 — vavr标签（空格分隔）： Java技术 函数式编程  相关概念1. 什么是函数式编程&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;函数式编程是种编程方式，它将电脑运算视为函数的计算。函数编程语言最重要的基础是λ演算（lambda&amp;ensp;calculus），而且λ演算的函数可以接受函数当作输入（参数）和输出（返回值）。和指令式编程相比，函数式编程强调函数的计算比指">
+  <meta name="description" content="相关概念1. 什么是函数式编程&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;函数式编程是种编程方式，它将电脑运算视为函数的计算。函数编程语言最重要的基础是λ演算（lambda&amp;ensp;calculus），而且λ演算的函数可以接受函数当作输入（参数）和输出（返回值）。和指令式编程相比，函数式编程强调函数的计算比指令的执行重要。和过程化编程相比，函数式编程里函数的计算可随时调用。 2. 闭包&amp;en">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随遇而安">
+<meta property="og:title" content="Java函数式编程利器 --- vavr">
 <meta property="og:url" content="https://www.fun-sunday.cn/2020/08/26/Java%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%88%A9%E5%99%A8%20---%20vavr/index.html">
 <meta property="og:site_name" content="随遇而安">
-<meta property="og:description" content="Java函数式编程利器 — vavr标签（空格分隔）： Java技术 函数式编程  相关概念1. 什么是函数式编程&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;函数式编程是种编程方式，它将电脑运算视为函数的计算。函数编程语言最重要的基础是λ演算（lambda&amp;ensp;calculus），而且λ演算的函数可以接受函数当作输入（参数）和输出（返回值）。和指令式编程相比，函数式编程强调函数的计算比指">
+<meta property="og:description" content="相关概念1. 什么是函数式编程&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;函数式编程是种编程方式，它将电脑运算视为函数的计算。函数编程语言最重要的基础是λ演算（lambda&amp;ensp;calculus），而且λ演算的函数可以接受函数当作输入（参数）和输出（返回值）。和指令式编程相比，函数式编程强调函数的计算比指令的执行重要。和过程化编程相比，函数式编程里函数的计算可随时调用。 2. 闭包&amp;en">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://static.zybuluo.com/nanquan-zeng/apbeqxarcbt46vkq9qvmzrad/44770-359555cb59a2878c.png">
-<meta property="article:published_time" content="2020-08-26T08:48:17.693Z">
-<meta property="article:modified_time" content="2020-08-26T08:48:30.144Z">
+<meta property="og:image" content="https://www.fun-sunday.cn/images/vavr.png">
+<meta property="article:published_time" content="2020-08-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-26T08:56:33.777Z">
 <meta property="article:author" content="Kenny">
-<meta property="article:tag" content="程序开拓者">
+<meta property="article:tag" content="Java技术">
+<meta property="article:tag" content="函数式编程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://static.zybuluo.com/nanquan-zeng/apbeqxarcbt46vkq9qvmzrad/44770-359555cb59a2878c.png">
+<meta name="twitter:image" content="https://www.fun-sunday.cn/images/vavr.png">
 
 <link rel="canonical" href="https://www.fun-sunday.cn/2020/08/26/Java%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%88%A9%E5%99%A8%20---%20vavr/">
 
@@ -48,7 +49,7 @@
   };
 </script>
 
-  <title> | 随遇而安</title>
+  <title>Java函数式编程利器 --- vavr | 随遇而安</title>
   
 
 
@@ -120,9 +121,14 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -176,7 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Java函数式编程利器 --- vavr
         </h1>
 
         <div class="post-meta">
@@ -187,7 +193,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-08-26 16:48:17 / 修改时间：16:48:30" itemprop="dateCreated datePublished" datetime="2020-08-26T16:48:17+08:00">2020-08-26</time>
+              <time title="创建时间：2020-08-26 00:00:00 / 修改时间：16:56:33" itemprop="dateCreated datePublished" datetime="2020-08-26T00:00:00+08:00">2020-08-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
             </span>
 
           
@@ -208,9 +223,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Java函数式编程利器-—-vavr"><a href="#Java函数式编程利器-—-vavr" class="headerlink" title="Java函数式编程利器 — vavr"></a>Java函数式编程利器 — vavr</h1><p>标签（空格分隔）： Java技术 函数式编程</p>
-<hr>
-<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><h4 id="1-什么是函数式编程"><a href="#1-什么是函数式编程" class="headerlink" title="1. 什么是函数式编程"></a>1. 什么是函数式编程</h4><p>&ensp;&ensp;&ensp;&ensp;函数式编程是种编程方式，它将电脑运算视为函数的计算。函数编程语言最重要的基础是λ演算（lambda&ensp;calculus），而且λ演算的函数可以接受函数当作输入（参数）和输出（返回值）。和指令式编程相比，函数式编程强调函数的计算比指令的执行重要。和过程化编程相比，函数式编程里函数的计算可随时调用。</p>
+        <h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><h4 id="1-什么是函数式编程"><a href="#1-什么是函数式编程" class="headerlink" title="1. 什么是函数式编程"></a>1. 什么是函数式编程</h4><p>&ensp;&ensp;&ensp;&ensp;函数式编程是种编程方式，它将电脑运算视为函数的计算。函数编程语言最重要的基础是λ演算（lambda&ensp;calculus），而且λ演算的函数可以接受函数当作输入（参数）和输出（返回值）。和指令式编程相比，函数式编程强调函数的计算比指令的执行重要。和过程化编程相比，函数式编程里函数的计算可随时调用。</p>
 <h4 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2. 闭包"></a>2. 闭包</h4><p>&ensp;&ensp;&ensp;&ensp;闭包就是能够读取其他函数内部变量的函数。例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。</p>
 <h4 id="3-可变集合与不可变集合"><a href="#3-可变集合与不可变集合" class="headerlink" title="3. 可变集合与不可变集合"></a>3. 可变集合与不可变集合</h4><p>&ensp;&ensp;&ensp;&ensp;顾名思义，一个可变（mutable）集合能够更新甚至扩展空间，这意味着你能改变，增加，或者删除一个集合的元素。一个不可变（immutable）集合，刚好相反，不能改变。你仍然可以做一些类似的增加，删除，或者更新，但是实际上它返回了一个新的对象，这里面就是指返回了一个新的集合，而老的集合没有改变。</p>
 <h4 id="4-元组"><a href="#4-元组" class="headerlink" title="4. 元组"></a>4. 元组</h4><p>&ensp;&ensp;&ensp;&ensp;元组（tuple）是一种不可变数据集的组合，与集合不同的是元组可以存放不同的数据类型，根据存储的数据个数可分为二元组、三元组、四元组……</p>
@@ -219,7 +232,7 @@
 <h4 id="7-柯里化（Currying）"><a href="#7-柯里化（Currying）" class="headerlink" title="7. 柯里化（Currying）"></a>7. 柯里化（Currying）</h4><p>&ensp;&ensp;&ensp;&ensp;在计算机科学中，柯里化（Currying）是把接受多个参数的函数变换成接受一个单一参数(最初函数的第一个参数)的函数，并且返回接受余下的参数且返回结果的新函数的技术。</p>
 <h3 id="8-偏函数（partial-function）"><a href="#8-偏函数（partial-function）" class="headerlink" title="8. 偏函数（partial function）"></a>8. 偏函数（partial function）</h3><p>&ensp;&ensp;&ensp;&ensp;对给定的输入参数类型，偏函数只能接受该类型的某些特定的值。</p>
 <h3 id="9-Functor、Monad、Applicative"><a href="#9-Functor、Monad、Applicative" class="headerlink" title="9. Functor、Monad、Applicative"></a>9. Functor、Monad、Applicative</h3><hr>
-<h2 id="vavr相关"><a href="#vavr相关" class="headerlink" title="vavr相关"></a>vavr相关</h2><h4 id="vavr库层次结构"><a href="#vavr库层次结构" class="headerlink" title="vavr库层次结构"></a>vavr库层次结构</h4><p><img src="http://static.zybuluo.com/nanquan-zeng/apbeqxarcbt46vkq9qvmzrad/44770-359555cb59a2878c.png" alt="vavr"></p>
+<h2 id="vavr相关"><a href="#vavr相关" class="headerlink" title="vavr相关"></a>vavr相关</h2><h4 id="vavr库层次结构"><a href="#vavr库层次结构" class="headerlink" title="vavr库层次结构"></a>vavr库层次结构</h4><p><img src="/images/vavr.png" alt="vavr"></p>
 <blockquote>
 <ul>
 <li>Option(Some None)</li>
@@ -315,9 +328,6 @@
 <p>3.找出100个人中年龄在28岁及以上的男性</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Random random = <span class="keyword">new</span> Random();</span><br><span class="line">		<span class="comment">// genger true: 男性 false 女性</span></span><br><span class="line">List.rangeClosed(<span class="number">1</span>, <span class="number">100</span>).map(i -&gt; <span class="keyword">new</span> Person(<span class="string">&quot;aaa&quot;</span>, random.nextInt(<span class="number">100</span>), random.nextBoolean()))</span><br><span class="line">	.filter(p -&gt; p.getAge() &gt;= <span class="number">28</span> &amp;&amp; p.isGender()).toJavaList();</span><br></pre></td></tr></table></figure>
-
-
-
     </div>
 
     
@@ -325,6 +335,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java%E6%8A%80%E6%9C%AF/" rel="tag"># Java技术</a>
+              <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag"># 函数式编程</a>
+          </div>
 
         
 
@@ -394,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%88%A9%E5%99%A8-%E2%80%94-vavr"><span class="nav-number">1.</span> <span class="nav-text">Java函数式编程利器 — vavr</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1. 什么是函数式编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%97%AD%E5%8C%85"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2. 闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%8F%AF%E5%8F%98%E9%9B%86%E5%90%88%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E9%9B%86%E5%90%88"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3. 可变集合与不可变集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%85%83%E7%BB%84"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4. 元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">5. 链式编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E6%83%B0%E6%80%A7%E6%B1%82%E5%80%BC"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">6. 惰性求值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E6%9F%AF%E9%87%8C%E5%8C%96%EF%BC%88Currying%EF%BC%89"><span class="nav-number">1.1.0.7.</span> <span class="nav-text">7. 柯里化（Currying）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%81%8F%E5%87%BD%E6%95%B0%EF%BC%88partial-function%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">8. 偏函数（partial function）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Functor%E3%80%81Monad%E3%80%81Applicative"><span class="nav-number">1.1.2.</span> <span class="nav-text">9. Functor、Monad、Applicative</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vavr%E7%9B%B8%E5%85%B3"><span class="nav-number">1.2.</span> <span class="nav-text">vavr相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vavr%E5%BA%93%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">vavr库层次结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vavr%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.3.</span> <span class="nav-text">vavr应用实例</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 什么是函数式编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%97%AD%E5%8C%85"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%8F%AF%E5%8F%98%E9%9B%86%E5%90%88%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E9%9B%86%E5%90%88"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 可变集合与不可变集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%85%83%E7%BB%84"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. 元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">1.0.5.</span> <span class="nav-text">5. 链式编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E6%83%B0%E6%80%A7%E6%B1%82%E5%80%BC"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. 惰性求值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E6%9F%AF%E9%87%8C%E5%8C%96%EF%BC%88Currying%EF%BC%89"><span class="nav-number">1.0.7.</span> <span class="nav-text">7. 柯里化（Currying）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%81%8F%E5%87%BD%E6%95%B0%EF%BC%88partial-function%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">8. 偏函数（partial function）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Functor%E3%80%81Monad%E3%80%81Applicative"><span class="nav-number">1.2.</span> <span class="nav-text">9. Functor、Monad、Applicative</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vavr%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">vavr相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vavr%E5%BA%93%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">2.0.1.</span> <span class="nav-text">vavr库层次结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vavr%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">vavr应用实例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -415,11 +429,11 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
